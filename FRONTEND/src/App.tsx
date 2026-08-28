@@ -7,11 +7,20 @@ import Bugs from "./pages/Bugs"
 import Goals from "./pages/Goals"
 import Coding from "./pages/Coding"
 import Learning from "./pages/Learning"
+import Sidebar from "./components/Sidebar"
+import Dashboard from "./components/Dashboard"
+import Navbar from "./components/Navbar"
 const App = () => {
-  let app="sravani..."
+  
   return (
+    
     <BrowserRouter>
-    <Routes>
+    
+   
+    <Navbar/>
+    <div className="flex">
+      <Sidebar/>
+      <main> <Routes>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/projects' element={<Projects/>}/>
@@ -21,13 +30,13 @@ const App = () => {
       <Route path='/register' element={<Register/>}/>
       <Route path='/coding' element={<Coding/>}/>
       <Route path='/learning' element={<Learning/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
 
-
-    </Routes>
-    <div className="bg-red-500 h-screen">
-      <h1 className="text-4xl font-bold">{app}</h1>
-      
-    </div></BrowserRouter>
+    </Routes></main>
+    </div>
+    
+   
+    </BrowserRouter>
   )
 }
 
