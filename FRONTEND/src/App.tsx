@@ -10,17 +10,16 @@ import Learning from "./pages/Learning"
 import Sidebar from "./components/Sidebar"
 import Dashboard from "./components/Dashboard"
 import Navbar from "./components/Navbar"
+
 const App = () => {
   
   return (
     
     <BrowserRouter>
-    
-   
     <Navbar/>
     <div className="flex">
       <Sidebar/>
-      <main> <Routes>
+      <main className="flex-1 min-w-0"> <Routes>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/projects' element={<Projects/>}/>
@@ -30,12 +29,10 @@ const App = () => {
       <Route path='/register' element={<Register/>}/>
       <Route path='/coding' element={<Coding/>}/>
       <Route path='/learning' element={<Learning/>}/>
-      <Route path='/dashboard' element={<Dashboard/>}/>
-
-    </Routes></main>
+      <Route path='/' element={<Dashboard/>}/>
+    </Routes>
+    </main>
     </div>
-    
-   
     </BrowserRouter>
   )
 }
